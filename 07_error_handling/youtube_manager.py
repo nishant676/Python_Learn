@@ -16,8 +16,8 @@ def list_all_videos(videos):
     print("\n")
     print("*" * 70 )
     for index, video in enumerate(videos, start=1):
-        print(f"{index}. {video['name']},
-        duration: {video['time']} ")
+        print(f"{index}. {video['name']}, duration: {video['time']} ")
+    print("*" * 70 )
 
 def add_video(videos):
     name = input("Enter video name:")
@@ -29,15 +29,16 @@ def add_video(videos):
 
 def update_video(videos):
     list_all_videos(videos)
-    index = int(input("enter the video num to update"))
+    index = int(input("enter the video num to update::"))
+
     if 1<= index <= len(videos):
-    name = input("enter the new video name:")
-    time =  input("enter the new video time:")
-    video[index-1] = {'name': name, 'time':time}
-    save_data_helpervi(videos)
+        name = input("enter the new video name:")
+        time =  input("enter the new video time:")
+        videos[index-1] = {'name': name, 'time':time}
+        save_data_helper(videos)
 
     else:
-    print("Invalid index selected")
+     print("Invalid index selected")
 
 def delete_video(videos):
     list_all_videos(videos)
@@ -48,7 +49,8 @@ def delete_video(videos):
        save_data_helper(videos)
     
     else:
-    print("Invalid index selected")
+      print("Invalid index selected")
+
 
 
 
@@ -79,5 +81,3 @@ def main():
 
 if __name__ == "__main__":
     main() 
-
-
